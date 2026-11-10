@@ -1,0 +1,15 @@
+{
+  "dataset": "Oxford-IIIT Pet Dataset (subset, cat/dog via breed)",
+  "test_images": 480,
+  "test_accuracy": 0.9771,
+  "confusion": {
+    "cat_correct": 238,
+    "cat_as_dog": 10,
+    "dog_correct": 231,
+    "dog_as_cat": 1
+  },
+  "class_names_alphabetical": [
+    "Cat",
+    "Dog"
+  ]
+}

@@ -1,0 +1,6 @@
+# Dataset is downloaded by train_model.py — never commit it
+data/
+__pycache__/
+*.pyc
+.venv/
+venv/
