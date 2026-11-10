@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction — Dog vs Cat</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; background: #f6f3ee; margin: 0; }
+    .wrap { max-width: 560px; margin: 48px auto; background: #fff; padding: 32px;
+            border-radius: 14px; box-shadow: 0 4px 24px rgba(0,0,0,.08); text-align: center; }
+    img.photo { max-width: 100%; border-radius: 10px; }
+    .label { font-size: 34px; margin: 16px 0 4px; }
+    .conf { color: #0f6a6e; font-size: 20px; font-weight: 600; }
+    a.btn { display: inline-block; margin-top: 22px; background: #0f6a6e; color: #fff;
+            padding: 10px 22px; border-radius: 8px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="photo" src="data:image/jpeg;base64,{{ img_b64 }}" alt="Uploaded image">
+    <div class="label">{% if label == 'Dog' %}🐶{% else %}🐱{% endif %} {{ label }}</div>
+    <div class="conf">Confidence: {{ confidence }}%</div>
+    <a class="btn" href="/">Try another photo</a>
+  </div>
+</body>
+</html>

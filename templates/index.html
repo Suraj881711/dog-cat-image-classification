@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog vs Cat Classifier</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; background: #f6f3ee; margin: 0; }
+    .wrap { max-width: 560px; margin: 48px auto; background: #fff; padding: 32px;
+            border-radius: 14px; box-shadow: 0 4px 24px rgba(0,0,0,.08); text-align: center; }
+    h1 { margin-top: 0; }
+    .error { background: #fdecea; color: #8a1f11; padding: 10px 14px; border-radius: 8px; }
+    input[type=file] { margin: 18px 0; }
+    button { background: #0f6a6e; color: #fff; border: 0; padding: 11px 26px;
+             border-radius: 8px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #0b5255; }
+    p.note { color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🐶 Dog vs Cat 🐱</h1>
+    <p>Upload a photo and the AI model will tell you whether it is a
+       <strong>Dog</strong> or a <strong>Cat</strong> — with its confidence.</p>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required>
+      <br>
+      <button type="submit">Predict</button>
+    </form>
+    <p class="note">Model: MobileNetV2 transfer learning, trained on a subset of the
+       Oxford-IIIT Pet Dataset.</p>
+  </div>
+</body>
+</html>
